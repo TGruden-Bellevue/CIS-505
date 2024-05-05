@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_8\\javafx-sdk-22.0.1\\lib\\javafx.web.jar"
+    ]
+}
