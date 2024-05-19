@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.base.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.controls.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.media.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.swing.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx.web.jar",
+        "c:\\Users\\Trici\\Documents\\Master's Degree\\Java\\CIS 505\\CIS-505\\Module_Final\\lib\\javafx-swt.jar"
+    ]
+}

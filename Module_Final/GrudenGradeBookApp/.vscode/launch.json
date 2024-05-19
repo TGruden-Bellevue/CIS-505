@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "GrudenGradeBookApp",
+            "request": "launch",
+            "vmArgs": "--module-path C:/Users/Trici/Documents/Master's Degree/Java/CIS 505/CIS-505/Module_Final/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "GrudenGradeBookApp",
+            "projectName": "GrudenGradeBookApp_2d3b7d6b"
+        }
+    ]
+}
