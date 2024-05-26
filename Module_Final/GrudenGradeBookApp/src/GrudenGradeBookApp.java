@@ -4,6 +4,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GrudenGradeBookApp extends Application {
     private TextField firstNameField;
     private TextField lastNameField;
@@ -13,39 +17,31 @@ public class GrudenGradeBookApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Grade Book App");
-
-        // Create the form fields
         firstNameField = new TextField();
         lastNameField = new TextField();
         courseField = new TextField();
         gradeComboBox = new ComboBox<>();
         gradeComboBox.getItems().addAll("A", "B", "C", "D", "F");
 
-        // Create labels
         Label firstNameLabel = new Label("First Name:");
         Label lastNameLabel = new Label("Last Name:");
         Label courseLabel = new Label("Course:");
         Label gradeLabel = new Label("Grade:");
 
-        // Create buttons
         Button clearButton = new Button("Clear");
         Button viewButton = new Button("View Grades");
         Button saveButton = new Button("Save");
 
-        // Add button actions
         clearButton.setOnAction(e -> clearForm());
         viewButton.setOnAction(e -> viewGrades());
         saveButton.setOnAction(e -> saveGrade());
 
-        // Create results area
         resultsArea = new TextArea();
         resultsArea.setEditable(false);
 
-        // Layout the form
         GridPane grid = new GridPane();
-        grid.setVgap(10);
         grid.setHgap(10);
+        grid.setVgap(10);
         grid.add(firstNameLabel, 0, 0);
         grid.add(firstNameField, 1, 0);
         grid.add(lastNameLabel, 0, 1);
@@ -60,6 +56,7 @@ public class GrudenGradeBookApp extends Application {
         grid.add(resultsArea, 0, 5, 3, 1);
 
         Scene scene = new Scene(grid, 400, 400);
+        primaryStage.setTitle("Grade Book App");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -71,12 +68,49 @@ public class GrudenGradeBookApp extends Application {
         gradeComboBox.getSelectionModel().clearSelection();
     }
 
-    private void viewGrades() {
-        // This will be implemented to read and display the grades from the file
+    private void saveGrade() {
+        String firstName = firstNameField.getText();
+        String lastName = lastNameField.getText();
+        String course = courseField.getText();
+        String grade = gradeComboBox.getValue();
+
+        if (firstName.isEmpty() || lastName.isEmpty() || course.isEmpty() || grade == null) {
+            showAlert("Validation Error", "All fields are required.");
+            return;
+        }
+
+        Student student = new Student(firstName, lastName, course, grade);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("grades.csv", true))) {
+            writer.write(student.toCSV());
+            writer.newLine();
+        } catch (IOException e) {
+            showAlert("File Error", "Error writing to file.");
+        }
+
+        clearForm();
     }
 
-    private void saveGrade() {
-        // This will be implemented to save the grade to a file
+    private void viewGrades() {
+        resultsArea.clear();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("grades.csv"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                resultsArea.appendText(line);
+                resultsArea.appendText("\n");
+            }
+        } catch (IOException e) {
+            showAlert("File Error", "Error reading from file.");
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     public static void main(String[] args) {
